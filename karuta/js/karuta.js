@@ -333,7 +333,8 @@ function getNavBar(type,portfolioid,edit)
 			//-----------------USERNAME-----------------------------------------
 			if (cas_url=="") {
 				html += "	<li class='nav-item dropdown'>";
-				html += "		<a class='nav-link dropdown-toggle' href='#' id='userDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'  data-title='"+karutaStr[LANG]["button-change-password"]+"' data-toggle='tooltip' data-placement='bottom'>";
+				html += "		<a class='nav-link' data-placement='bottom'>";
+				//html += "		<a class='nav-link dropdown-toggle' href='#' id='userDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'  data-title='"+karutaStr[LANG]["button-change-password"]+"' data-toggle='tooltip' data-placement='bottom'>";
 				html += "			<i class='fas fa-user'></i>&nbsp;&nbsp;"+USER.firstname+" "+USER.lastname;
 				html += " 		</a>";
 				html += "		<div class='dropdown-menu dropdown-menu-right' aria-labelledby='userDropdown'>";
@@ -344,7 +345,9 @@ function getNavBar(type,portfolioid,edit)
 				html += "	</li>";
 			} else {
 				html += "	<li class='nav-item dropdown'>";
-				html += "		<i class='fas fa-user'></i>&nbsp;&nbsp;"+USER.firstname+" "+USER.lastname;
+				html += "		<a class='nav-link' data-placement='bottom'>";
+				html += "			<i class='fas fa-user'></i>&nbsp;&nbsp;"+USER.firstname+" "+USER.lastname;
+				html += " 		</a>";
 				html += "	</li>";
 			}
 			//-----------------LOGOUT-----------------------------------------
