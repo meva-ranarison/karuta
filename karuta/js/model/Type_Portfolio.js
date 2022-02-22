@@ -466,7 +466,10 @@ UIFactory["Portfolio"].displayHorizontalMenu2 = function(root,destid,type,langco
 	$("#"+destid).html($(html));
 	UIFactory.Node.displayHorizontalMenu2(root,'parent-'+UICom.rootid,type,langcode,edit,rootid);
 };
-
+function print_page(){
+    window.print();
+  }
+/*
 //======================
 UIFactory["Portfolio"].displayMenu = function(destid,type,langcode,edit,tree)
 //======================
@@ -484,7 +487,7 @@ UIFactory["Portfolio"].displayMenu = function(destid,type,langcode,edit,tree)
 		html += "</ul>";
 		$("#"+destid).html(html);
 	}
-};
+}; */
 
 //==============================
 UIFactory["Portfolio"].getNavBar = function (type,langcode,edit,portfolioid)
@@ -504,6 +507,10 @@ UIFactory["Portfolio"].getNavBar = function (type,langcode,edit,portfolioid)
 	html += "	</button>";
 	html += "	<div class='navbar-collapse collapse navbars' id='portfolio-navbars'>";
 	html += "		<ul class='ml-auto navbar-nav'>";
+	//-------------------- PRINT---------------
+	html += "			<li class='nav-item icon'>";
+	html += "				<a id='print-portfolio' onclick='print_page()' class='nav-link fas fa-print' data-title='"+karutaStr[LANG]["button-print"]+"' data-toggle='tooltip' data-placement='bottom'></a>";
+	html += "			</li>";
 	//-------------------- SEARCH -----------
 	html += "			<li class='input-group'>";
 	html += "				<input type='text' id='"+type+"-search-text-input' class='form-control' value='' placeholder='"+karutaStr[LANG]['search-portfolio-text']+"'>";
